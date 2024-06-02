@@ -8,15 +8,15 @@ Simplied, it is a tool that helps you to **move data from one place to another**
 
 ## Getting Started with Docker
 
-```bash
-docker compose up
+```bash {"id":"01HZC1MD2D41MPAX60EARFW170"}
+docker compose -f airbyte-docker-compose.yml up -d
 ```
 
 ## Getting Started with `abctl`:
 
 Reference: [Airbyte on Local](https://docs.airbyte.com/deploying-airbyte/quickstart)
 
-```bash
+```bash {"id":"01HZC1MD2D41MPAX60EDK8TMW1"}
 brew tap airbytehq/tap
 brew install abctl
 
