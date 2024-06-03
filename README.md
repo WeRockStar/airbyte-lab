@@ -8,6 +8,8 @@ Simplied, it is a tool that helps you to **move data from one place to another**
 
 ## Getting Started with Docker
 
+Reference: [Airbyte Platform](https://github.com/airbytehq/airbyte-platform/blob/main/docker-compose.yaml)
+
 ```bash {"id":"01HZC1MD2D41MPAX60EARFW170"}
 docker compose -f airbyte-docker-compose.yml up -d
 ```
