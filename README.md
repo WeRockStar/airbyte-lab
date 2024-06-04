@@ -24,4 +24,7 @@ brew install abctl
 
 # And then run the following command
 abctl local install
+
+# Uninstall Airbyte locally
+abctl local uninstall
 ```
