@@ -28,3 +28,8 @@ abctl local install
 # Uninstall Airbyte locally
 abctl local uninstall
 ```
+
+## Learn PyAirbyte
+
+- [ ] Introduction to PyAirbyte
+- [ ] Basic usage examples
