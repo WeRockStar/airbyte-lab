@@ -10,7 +10,7 @@ Simplied, it is a tool that helps you to **move data from one place to another**
 
 Reference: [Airbyte Platform](https://github.com/airbytehq/airbyte-platform/blob/main/docker-compose.yaml)
 
-```bash {"id":"01HZC1MD2D41MPAX60EARFW170"}
+```bash
 docker compose -f airbyte-docker-compose.yml up -d
 ```
 
@@ -18,7 +18,7 @@ docker compose -f airbyte-docker-compose.yml up -d
 
 Reference: [Airbyte on Local](https://docs.airbyte.com/deploying-airbyte/quickstart)
 
-```bash {"id":"01HZC1MD2D41MPAX60EDK8TMW1"}
+```bash
 brew tap airbytehq/tap
 brew install abctl
 
