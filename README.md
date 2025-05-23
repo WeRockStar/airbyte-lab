@@ -16,7 +16,7 @@ docker compose -f airbyte-docker-compose.yml up -d
 
 ## Getting Started with `abctl`:
 
-Reference: [Airbyte on Local](https://docs.airbyte.com/deploying-airbyte/quickstart)
+Reference: [Airbyte on Local](https://docs.airbyte.com/platform/using-airbyte/getting-started/oss-quickstart#install-abctl-manually-mac-linux-windows)
 
 ```bash
 brew tap airbytehq/tap
@@ -24,6 +24,9 @@ brew install abctl
 
 # And then run the following command
 abctl local install
+
+# start with low resource mode
+abctl local install --low-resource-mode
 
 # Uninstall Airbyte locally
 abctl local uninstall
