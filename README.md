@@ -10,6 +10,7 @@ Simplied, it is a tool that helps you to **move data from one place to another**
 
 Reference: [Airbyte Platform](https://github.com/airbytehq/airbyte-platform/blob/main/docker-compose.yaml)
 
+### The way of running with docker compose is deprecated, suggested to use `abctl` instead.
 ```bash
 docker compose -f airbyte-docker-compose.yml up -d
 ```
