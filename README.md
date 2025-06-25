@@ -34,6 +34,16 @@ abctl local uninstall
 ```
 ℹ️ Open your browser and go to [http://localhost:8000](http://localhost:8000) to access the Airbyte UI.
 
+## Comprehensive Learning with Airflow
+
+I have created `Dockerfile` and add airbyte provider.
+```bash
+docker build -t airflow-airbyte:2.10.3 .
+
+# and then run the following command
+docker compose up
+```
+
 ## Learn PyAirbyte
 
 - [ ] Introduction to PyAirbyte
