@@ -1,0 +1,17 @@
+[project]
+name = "airbyte-lab"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "WeRockStar",email = "kotchaphan.m@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "apache-airflow-providers-airbyte (>=5.2.0,<6.0.0)",
+    "apache-airflow (==2.10.3)"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
