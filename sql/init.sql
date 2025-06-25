@@ -23,10 +23,10 @@ CREATE TABLE IF NOT EXISTS orders (
 );
 
 -- Seed orders for John (assuming John's id is 1)
-INSERT INTO orders (user_id, product, quantity, price)
-VALUES
-  (1, 'Laptop', 1, 1200.00),
-  (1, 'Smartphone', 2, 800.00);
+-- INSERT INTO orders (user_id, product, quantity, price)
+-- VALUES
+--   (1, 'Laptop', 1, 1200.00),
+--   (1, 'Smartphone', 2, 800.00);
 
 -- Create order_history table
 CREATE TABLE IF NOT EXISTS order_history (
@@ -37,5 +37,5 @@ CREATE TABLE IF NOT EXISTS order_history (
 );
 
 -- Example: Seed order history for John's orders
-INSERT INTO order_history (order_id, status)
-SELECT id, 'placed' FROM orders WHERE user_id = 1;
+-- INSERT INTO order_history (order_id, status)
+-- SELECT id, 'placed' FROM orders WHERE user_id = 1;

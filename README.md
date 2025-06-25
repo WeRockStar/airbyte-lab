@@ -32,6 +32,7 @@ abctl local install --low-resource-mode
 # Uninstall Airbyte locally
 abctl local uninstall
 ```
+ℹ️ Open your browser and go to [http://localhost:8000](http://localhost:8000) to access the Airbyte UI.
 
 ## Learn PyAirbyte
 
