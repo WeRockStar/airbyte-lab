@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS users (
     first_name TEXT NOT NULL,
     last_name TEXT NOT NULL,
     age INT NOT NULL,
-    updated_at TIMESTAMP NOT NULL DEFAULT NOW()
+    updated_at TIMESTAMP NOT NULL
 );
 
 -- Seed data
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS orders (
     product TEXT NOT NULL,
     quantity INT NOT NULL,
     price NUMERIC NOT NULL,
-    created_at TIMESTAMP NOT NULL DEFAULT NOW()
+    created_at TIMESTAMP NOT NULL
 );
 
 -- Create order_history table
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS order_history (
     id SERIAL PRIMARY KEY,
     order_id INT NOT NULL REFERENCES orders (id),
     status TEXT NOT NULL,
-    changed_at TIMESTAMP NOT NULL DEFAULT NOW()
+    changed_at TIMESTAMP NOT NULL
 );
 
 INSERT INTO orders (user_id, product, quantity, price, created_at)

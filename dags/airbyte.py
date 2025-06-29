@@ -12,7 +12,6 @@ default_args = {
     'start_date': datetime(2025, 1, 1),
 }
 
-# Create the DAG instance
 with DAG(
     'airbyte',
     default_args=default_args,
@@ -22,7 +21,7 @@ with DAG(
 ) as dag:
     task = AirbyteTriggerSyncOperator(
         task_id='airbyte_sync',
-        connection_id='95173d7b-5d88-4f76-8e70-5fccb9a277b1',
+        connection_id='8fda0f73-6713-4a05-85ea-c5ba81dadb00',
         airbyte_conn_id='airbyte'
     )
 
