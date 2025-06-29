@@ -24,12 +24,6 @@ CREATE TABLE IF NOT EXISTS orders (
   created_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
--- Seed orders for John (assuming John's id is 1)
--- INSERT INTO orders (user_id, product, quantity, price)
--- VALUES
---   (1, 'Laptop', 1, 1200.00),
---   (1, 'Smartphone', 2, 800.00);
-
 -- Create order_history table
 CREATE TABLE IF NOT EXISTS order_history (
   id         SERIAL    PRIMARY KEY,
@@ -38,6 +32,17 @@ CREATE TABLE IF NOT EXISTS order_history (
   changed_at TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
--- Example: Seed order history for John's orders
--- INSERT INTO order_history (order_id, status)
--- SELECT id, 'placed' FROM orders WHERE user_id = 1;
+INSERT INTO orders (user_id, product, quantity, price, created_at)
+VALUES
+  (1, 'Laptop', 1, 1200.00, NOW()),
+  (1, 'Smartphone', 2, 800.00, NOW()),
+	(2, 'Tablet', 1, 300.00, NOW()),
+	(3, 'Monitor', 2, 400.00, NOW()),
+	(4, 'Keyboard', 5, 50.00, NOW());
+
+INSERT INTO order_history (order_id, status, changed_at)
+VALUES
+	(1, 'Pending', NOW()),
+	(1, 'Shipped', NOW() + INTERVAL '1 day'),
+	(2, 'Pending', NOW()),
+	(2, 'Shipped', NOW() + INTERVAL '2 days');
