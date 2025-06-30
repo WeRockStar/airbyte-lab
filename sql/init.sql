@@ -43,6 +43,6 @@ VALUES
 INSERT INTO order_history (order_id, status, changed_at)
 VALUES
 (1, 'Pending', NOW()),
-(1, 'Shipped', NOW() + INTERVAL '1 day'),
+(1, 'Shipped', NOW()),
 (2, 'Pending', NOW()),
-(2, 'Shipped', NOW() + INTERVAL '2 days');
+(2, 'Shipped', NOW());
