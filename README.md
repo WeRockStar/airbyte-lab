@@ -51,6 +51,15 @@ docker build -t airflow-airbyte:2.10.3 .
 docker compose up
 ```
 
+## Airbyte Connection in Airflow
+- Connection Type: `Airbyte`
+- Host: `http://{AIRBYTE_HOST}/api/public/v1/`
+- Token URL: `http://{AIRBYTE_HOST}/api/public/v1/applications/token`
+- Client ID
+- Client Secret
+
+Read more about connections [here](https://airflow.apache.org/docs/apache-airflow-providers-airbyte/stable/connections.html).
+
 ## Learn PyAirbyte
 
 - [ ] Introduction to PyAirbyte
