@@ -40,7 +40,7 @@ I have created `Dockerfile`, add `apache-airflow-providers-airbyte` provider whi
 
 `.env`
 ```
-AIRFLOW_IMAGE_NAME=airflow-poetry:2.10.3
+AIRFLOW_IMAGE_NAME=airflow-airbyte:2.10.3
 ```
 
 Build and Start
