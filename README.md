@@ -4,7 +4,7 @@ Airbyte is an open-source **data integration** platform that helps you replicate
 
 As Data Engineers, we often use Airbyte to **extract** data from different sources, and **load** it into any destination of our choice.
 
-Simplied, it is a tool that helps you to **move data from one place to another**.
+Simplified, it is a tool that helps you to **move data from one place to another**.
 
 ## Getting Started with Docker
 
@@ -64,3 +64,10 @@ Read more about connections [here](https://airflow.apache.org/docs/apache-airflo
 
 - [ ] Introduction to PyAirbyte
 - [ ] Basic usage examples
+
+## References
+- [Concepts](https://docs.airbyte.com/platform/using-airbyte/core-concepts/)
+- [Managing Airbyte with API](https://docs.airbyte.com/platform/using-airbyte/configuring-api-access)
+- [API Reference](https://reference.airbyte.com/reference/getting-started)
+- [Managing Airbyte with Terraform](https://docs.airbyte.com/platform/terraform-documentation)
+- [Airflow Airbyte Provider](https://airflow.apache.org/docs/apache-airflow-providers-airbyte/stable/connections.html)
