@@ -1,4 +1,4 @@
--- Create table without the JSONB "profile" column
+-- Create table and seed data for testing purposes
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     first_name TEXT NOT NULL,
@@ -7,14 +7,13 @@ CREATE TABLE IF NOT EXISTS users (
     updated_at TIMESTAMP NOT NULL
 );
 
--- Seed data
 INSERT INTO users (first_name, last_name, age, updated_at)
 VALUES ('John', 'Doe', 30, NOW()),
 ('Jane', 'Smith', 25, NOW()),
 ('Bob', 'Johnson', 40, NOW()),
 ('Alice', 'Williams', 35, NOW());
 
--- Create orders table
+
 CREATE TABLE IF NOT EXISTS orders (
     id SERIAL PRIMARY KEY,
     user_id INT NOT NULL REFERENCES users (id),
@@ -24,7 +23,6 @@ CREATE TABLE IF NOT EXISTS orders (
     created_at TIMESTAMP NOT NULL
 );
 
--- Create order_history table
 CREATE TABLE IF NOT EXISTS order_history (
     id SERIAL PRIMARY KEY,
     order_id INT NOT NULL REFERENCES orders (id),
