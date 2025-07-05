@@ -11,7 +11,7 @@ Simplified, it is a tool that helps you to **move data from one place to another
 - [Comprehensive Learning with Airflow](#comprehensive-learning-with-airflow)
 - [Airbyte Connection in Airflow](#airbyte-connection-in-airflow)
 - [Learn PyAirbyte](#learn-pyairbyte)
-- [PostgreSQL Change Data Capture (CDC)](#change-data-capture-cdc)
+- [PostgreSQL Change Data Capture (CDC)](#postgresql-change-data-capture-cdc)
 - [References](#references)
 
 ## Getting Started with Docker
