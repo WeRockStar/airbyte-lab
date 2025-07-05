@@ -6,6 +6,14 @@ As Data Engineers, we often use Airbyte to **extract** data from different sourc
 
 Simplified, it is a tool that helps you to **move data from one place to another**.
 
+## Table of Contents
+- [Getting Started with Docker](#getting-started-with-docker)
+- [Comprehensive Learning with Airflow](#comprehensive-learning-with-airflow)
+- [Airbyte Connection in Airflow](#airbyte-connection-in-airflow)
+- [Learn PyAirbyte](#learn-pyairbyte)
+- [PostgreSQL Change Data Capture (CDC)](#change-data-capture-cdc)
+- [References](#references)
+
 ## Getting Started with Docker
 
 Reference: [Airbyte Platform](https://github.com/airbytehq/airbyte-platform/blob/main/docker-compose.yaml)
@@ -15,7 +23,7 @@ Reference: [Airbyte Platform](https://github.com/airbytehq/airbyte-platform/blob
 docker compose -f airbyte-docker-compose.yml up -d
 ```
 
-## Getting Started with `abctl`:
+### Getting Started with `abctl`:
 
 Reference: [Airbyte on Local](https://docs.airbyte.com/platform/using-airbyte/getting-started/oss-quickstart#install-abctl-manually-mac-linux-windows)
 
@@ -65,9 +73,39 @@ Read more about connections [here](https://airflow.apache.org/docs/apache-airflo
 - [ ] Introduction to PyAirbyte
 - [ ] Basic usage examples
 
+## PostgreSQL Change Data Capture (CDC)
+
+```sql
+ALTER USER <user_name> REPLICATION; -- In this case, user_name is `postgres`
+
+-- Explore the current settings
+SHOW wal_level; -- Currently, it will be set to 'replica'
+SHOW max_wal_senders;
+SHOW max_replication_slots;
+
+-- Update wal_level to logical
+ALTER SYSTEM SET wal_level = logical;
+-- Restart PostgreSQL to apply changes with `docker compose restart {container_name}`
+
+-- Create a replication slot
+SELECT pg_create_logical_replication_slot('airbyte_slot', 'pgoutput');
+
+-- Create publication and replication identities for each Postgres table
+ALTER TABLE orders REPLICA IDENTITY DEFAULT;
+ALTER TABLE users REPLICA IDENTITY DEFAULT;
+ALTER TABLE order_history REPLICA IDENTITY DEFAULT;
+
+-- Create a publication for the tables you want to replicate
+CREATE PUBLICATION airbyte_publication FOR TABLE orders, users, order_history;
+
+-- View replication slots
+SELECT * FROM pg_replication_slots; -- We will see `airbyte_slot` in the output
+```
+
 ## References
 - [Concepts](https://docs.airbyte.com/platform/using-airbyte/core-concepts/)
 - [Managing Airbyte with API](https://docs.airbyte.com/platform/using-airbyte/configuring-api-access)
 - [API Reference](https://reference.airbyte.com/reference/getting-started)
 - [Managing Airbyte with Terraform](https://docs.airbyte.com/platform/terraform-documentation)
 - [Airflow Airbyte Provider](https://airflow.apache.org/docs/apache-airflow-providers-airbyte/stable/connections.html)
+- [Airbyte CDC](https://docs.airbyte.com/platform/understanding-airbyte/cdc)
