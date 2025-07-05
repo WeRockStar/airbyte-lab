@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "airbyte",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

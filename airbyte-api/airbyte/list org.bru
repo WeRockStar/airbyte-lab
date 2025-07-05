@@ -1,0 +1,16 @@
+meta {
+  name: list org
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{airbyte_base_url}}/v1/organizations
+  body: none
+  auth: inherit
+}
+
+headers {
+  accept: application/json
+  Authorization: Bearer {{access_token}}
+}

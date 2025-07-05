@@ -1,0 +1,28 @@
+meta {
+  name: access token
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{airbyte_base_url}}/v1/applications/token
+  body: json
+  auth: inherit
+}
+
+headers {
+  accept: application/json
+  content-type: application/json
+}
+
+body:json {
+  {
+    "client_id": "{{client_id}}",
+    "client_secret": "{{client_secret}}"
+  }
+}
+
+script:post-response {
+  let data = res.getBody();
+  bru.setEnvVar("access_token", data.access_token);
+}

@@ -1,0 +1,23 @@
+meta {
+  name: create application
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{airbyte_base_url}}/v1/applications
+  body: json
+  auth: none
+}
+
+headers {
+  accept: application/json
+  content-type: application/json
+  Authorization: Bearer {{access_token}}
+}
+
+body:json {
+  {
+    "name": "airbyte"
+  }
+}

@@ -1,0 +1,17 @@
+meta {
+  name: delete application
+  type: http
+  seq: 8
+}
+
+delete {
+  url: {{airbyte_base_url}}/v1/applications/cc04f0a4-104c-4be0-b25d-f5bda0475960
+  body: json
+  auth: none
+}
+
+headers {
+  accept: application/json
+  content-type: application/json
+  Authorization: Bearer {{access_token}}
+}
