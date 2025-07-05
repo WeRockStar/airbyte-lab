@@ -44,14 +44,14 @@ abctl local uninstall
 
 ## Comprehensive Learning with Airflow
 
-I have created `Dockerfile`, add `apache-airflow-providers-airbyte` provider while building the image, and switched to use `airflow-airbyte` image. see `.env`.
+I have created `Dockerfile`, add `apache-airflow-providers-airbyte` provider while building the image, and switched to use `airflow-airbyte` image. see `airflow/.env`.
 
-`.env`
+`airflow/.env`
 ```
 AIRFLOW_IMAGE_NAME=airflow-airbyte:2.10.3
 ```
 
-Build and Start
+Build and Start Airflow(Airbyte included) with Docker Compose:
 ```bash
 docker build -t airflow-airbyte:2.10.3 .
 
