@@ -44,3 +44,7 @@ VALUES
 (1, 'Shipped', NOW()),
 (2, 'Pending', NOW()),
 (2, 'Shipped', NOW());
+
+
+-- Grant replication privileges to the postgres user
+ALTER USER postgres REPLICATION;
