@@ -13,10 +13,10 @@ default_args = {
 }
 
 with DAG(
-    'airbyte',
+    'order_to_bigquery',
     default_args=default_args,
-    description='A simple Airflow DAG',
-    schedule_interval=timedelta(days=1),
+    description='Sync orders to BigQuery',
+    schedule_interval='@daily',
     catchup=False,
 ) as dag:
     task = AirbyteTriggerSyncOperator(
