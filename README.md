@@ -44,7 +44,9 @@ abctl local uninstall
 
 ## Comprehensive Learning with Airflow
 
-I have created `Dockerfile`, add `apache-airflow-providers-airbyte` provider while building the image, and switched to use `airflow-airbyte` image. see `airflow/.env`.
+Airflow is a platform to orchestrate complex workflows, and it can be used to manage data pipelines that involve Airbyte.
+
+To make Airflow work with Airbyte, we can use the `apache-airflow-providers-airbyte` provider, which allows us to create connections and manage Airbyte jobs directly from Airflow. I have created `Dockerfile`, add `apache-airflow-providers-airbyte` provider while building the image, and we will switch to use `airflow-airbyte` image instead. see `airflow/.env`.
 
 `airflow/.env`
 ```
